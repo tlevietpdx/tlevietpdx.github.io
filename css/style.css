@@ -34,11 +34,48 @@ a {
 p {
   margin-bottom: 1.5em; }
 
+p.position-gold {
+  color: #f6c14d;
+  margin-bottom: 2px;
+}
+
+p.position-silver {
+  color: #6e6e6ef8;
+  margin-bottom: 2px;
+}
+
+p.position-bronze {
+  color: #d75218;
+  margin-bottom: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #000;
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 400;
-  margin: 0 0 30px 0; }
+  margin: 0 0 10px 0; }
+
+.projects {
+    margin: 0 0 20px 0;
+}
+.projects p.title {
+    font-weight: bold;
+    margin: 0 0 0 0;
+}
+.projects p.subtitle {
+    font-style: italic;
+    margin: 0 0 0 0;
+}
+.tech-stack {
+    margin: 5px 0 0 0;
+}
+/* .tech-stack > span {
+    text-decoration: underline;
+} */
 
 figure {
   margin-bottom: 2.5em;
@@ -80,7 +117,7 @@ figure {
   position: fixed;
   overflow-y: scroll;
   z-index: 1001;
-  background: #f2f3f7;
+  background: #b9d6f361;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
@@ -594,8 +631,8 @@ body.offcanvas {
   top: 10px;
   margin-left: -9px; }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p + p {
-  margin-top: 15px; }
+/* .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p + p {
+  margin-top: 5px; } */
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 {
   font-size: 20px;

@@ -264,7 +264,7 @@
 
 		$('.sticky-parent').css('height', h);
 
-		$("#sticky_item").stick_in_parent();
+		// $("#sticky_item").stick_in_parent();
 
 	};
 
@@ -308,3 +308,18 @@
 
 
 }());
+
+function sendEmail(event) {
+	event.preventDefault();
+
+	var name = document.getElementById('name').value;
+	var email = document.getElementById('email').value;
+	var subject = document.getElementById('subject').value;
+	var message = document.getElementById('message').value;
+
+	// Construct the mailto link
+	var mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${encodeURIComponent(message)}`;
+
+	// Open the mailto link
+	window.location.href = mailtoLink;
+}

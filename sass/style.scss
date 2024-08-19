@@ -382,7 +382,7 @@ figure {
 			left: 20px;
 			float: left;
 			width: auto;
-			@media screen and(max-width: $screen-sm){
+			@media screen and (max-width: #{ $screen-sm }){
 				right: 20px;
 				top: 100px;
 			}
@@ -507,7 +507,7 @@ body {
 
 .colorlib-narrow-content{
 	padding: 0 2.5em;
-	@media screen and(max-width: $screen-sm){
+	@media screen and (max-width: #{ $screen-sm }){
 		padding: 0;
 	}
 }
@@ -529,7 +529,7 @@ body {
 	clear: both;
 	width: 100%;
 	display: block;
-	@media screen and(max-width: $screen-sm){
+	@media screen and (max-width: #{ $screen-sm }){
 		padding-top: 5em;
 		padding-bottom: 8em;
 	}
@@ -850,7 +850,7 @@ margin-left: -20px;
 	margin-bottom: 80px;
 	position: relative;
 	z-index: 0;
-	@media screen and(max-width: $screen-sm){
+	@media screen and (max-width: #{ $screen-sm }){
 		margin-bottom: 4em;
 	}
 	.icon{
@@ -1123,7 +1123,7 @@ margin-left: -20px;
 	float: left;
 	background: $brand-white;
 	margin-bottom: 3em;
-	@media screen and(max-width: $screen-sm){
+	@media screen and (max-width: #{ $screen-sm }){
 		margin-bottom: 3em;
 	}
 	.blog-img{
@@ -1279,7 +1279,7 @@ margin-left: -20px;
 				color: $brand-black;
 			}
 		}
-		@media screen and(max-width: $screen-sm){
+		@media screen and (max-width: #{ $screen-sm }){
 			opacity: 1;
 			background: rgba(0,0,0,.4);
 			h3{
@@ -1437,7 +1437,7 @@ margin-left: -20px;
 				color: $brand-white;
 				border: 1px solid $brand-primary;
 			}
-			@media screen and(max-width: $screen-sm){
+			@media screen and (max-width: #{ $screen-sm }){
 				padding: 7px 15px;
 			}
 		}
