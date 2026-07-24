@@ -164,11 +164,39 @@
 		    event.preventDefault();
 		    return false;
 		});
-
-
-	};
-
-	// Reflect scrolling in navigation
+	
+		// Contact Me button scroll handler
+		$('.btn-hire').click(function(event){
+			event.preventDefault();
+			var target = $(this).attr('href');
+			if ($(target).length) {
+				$('html, body').animate({
+					scrollTop: $(target).offset().top - 55
+				}, 500, function() {
+					// Trigger animations for elements in the target section
+					$(target).find('.animate-box:not(.animated)').each(function(k){
+						var el = $(this);
+						setTimeout(function(){
+							var effect = el.data('animate-effect');
+							if (effect === 'fadeIn') {
+								el.addClass('fadeIn animated');
+							} else if (effect === 'fadeInLeft') {
+								el.addClass('fadeInLeft animated');
+							} else if (effect === 'fadeInRight') {
+								el.addClass('fadeInRight animated');
+							} else {
+								el.addClass('fadeInUp animated');
+							}
+						}, k * 200);
+					});
+				});
+			}
+		});
+	
+	
+		};
+	
+		// Reflect scrolling in navigation
 	var navActive = function(section) {
 
 		var $el = $('#navbar > ul');
@@ -317,9 +345,36 @@ function sendEmail(event) {
 	var subject = document.getElementById('subject').value;
 	var message = document.getElementById('message').value;
 
-	// Construct the mailto link
-	var mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${encodeURIComponent(message)}`;
+	// // Construct the mailto link
+	// var mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${encodeURIComponent(message)}`;
 
-	// Open the mailto link
-	window.location.href = mailtoLink;
+	// // Open the mailto link
+	// window.location.href = mailtoLink;
+
+	// Show popup message
+	var popup = document.getElementById('popup');
+	popup.style.display = "block";
+
+	// Close popup after 3 seconds
+	setTimeout(closePopup, 3000);
+	console.log(JSON.stringify({ name, email, subject, message }));
+
+	// Send data to GCP Cloud Function
+	fetch('https://us-central1-centering-star-455618-p9.cloudfunctions.net/storeMessage', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ name, email, subject, message })
+	}).then(response => response.json())
+	.then(data => {
+		console.log("✅ Message uploaded successfully:", data);
+	})
+	.catch(error => {
+		console.error("❌ Error uploading message:", error);
+	});
+}
+
+// Function to close the popup manually
+function closePopup() {
+	var popup = document.getElementById('popup');
+	popup.style.display = "none";
 }
