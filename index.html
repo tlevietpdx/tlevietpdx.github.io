@@ -1,24 +1,36 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+	<!-- Anti-flash script: Set theme before CSS loads -->
+	<script>
+		(function() {
+			var savedTheme = localStorage.getItem('theme');
+			var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+				document.documentElement.setAttribute('data-theme', 'dark');
+			} else {
+				document.documentElement.setAttribute('data-theme', 'light');
+			}
+		})();
+	</script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Viet's Portfolio</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+	<meta name="description" content="Viet-Thanh Le - AI/ML Engineer, Software Engineer and Data Engineer specializing in LLM workflows, cloud infrastructure and machine learning pipelines" />
+	<meta name="keywords" content="AI Engineer, ML Engineer, Software Engineer, Data Engineer, LLM, Python, AWS, Azure, GCP, Portland" />
+	<meta name="author" content="Viet-Thanh Le" />
 
-  <!-- Facebook and Twitter integration -->
-	<!-- <meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" /> -->
+	 <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="Viet-Thanh Le - AI/ML Engineer Portfolio"/>
+	<meta property="og:image" content="images/about.png"/>
+	<meta property="og:url" content="https://tlevietpdx.github.io"/>
+	<meta property="og:site_name" content="Viet-Thanh Le Portfolio"/>
+	<meta property="og:description" content="AI/ML Engineer specializing in LLM workflows, cloud infrastructure and machine learning pipelines"/>
+	<meta name="twitter:title" content="Viet-Thanh Le - AI/ML Engineer Portfolio" />
+	<meta name="twitter:image" content="images/about.png" />
+	<meta name="twitter:url" content="https://tlevietpdx.github.io" />
+	<meta name="twitter:card" content="summary" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
@@ -71,6 +83,7 @@
 						<li><a href="#" data-nav-section="services">Services</a></li>
 						<li><a href="#" data-nav-section="skills">Skills</a></li>
 						<li><a href="#" data-nav-section="education">Education</a></li>
+						<li><a href="#" data-nav-section="awards">Awards</a></li>
 						<li><a href="#" data-nav-section="experience">Experience</a></li>
 						<li><a href="#" data-nav-section="work">Work</a></li>
 						<!-- <li><a href="#" data-nav-section="blog">Blog</a></li> -->
@@ -84,10 +97,9 @@
 Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved. Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></span> <span>Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash.com</a></span></small></p>
 				<ul>
-					<li><a href="#"><i class="icon-facebook2"></i></a></li>
-					<li><a href="#"><i class="icon-twitter2"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
+					<li><a href="https://github.com/tlevietpdx" target="_blank"><i class="icon-github"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/viet-thanh-le-309b87316/" target="_blank"><i class="icon-linkedin2"></i></a></li>
+					<li><a href="#" id="theme-toggle"><i class="icon-half-moon"></i></a></li>
 				</ul>
 			</div>
 
@@ -121,7 +133,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 					   				<div class="slider-text-inner">
 					   					<div class="desc">
 						   					<h1>I am an<br>AI Engineer 🤖</h1>
-												<h2>My expertise lies in building infrastructure and automating sophisticated LLM workflow.</a></h2>
+												<h2>My expertise lies in building infrastructure and automating sophisticated LLM workflows.</h2>
 												<p><a class="btn btn-primary btn-learn" href="#about">View Portfolio <i class="icon-briefcase3"></i></a></p>
 											</div>
 					   				</div>
@@ -142,11 +154,11 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									<div class="about-desc">
 										<span class="heading-meta">About Me</span>
 										<h2 class="colorlib-heading">Who Am I?</h2>
-										<p><strong>Hello, I am Viet</strong> I am a positive and collaborative individual with 
-											a strong enthusiasm for integrating LLM capabilities into autonomous applications. 
-											With a solid foundation in building LLM workflow and a keen interest in real-world problem-solving,
+										<p><strong>Hello, I am Viet-Thanh Le</strong> — a positive and collaborative AI/ML Engineer with
+											a strong enthusiasm for integrating LLM capabilities into autonomous applications.
+											With a solid foundation in building LLM workflows and a keen interest in real-world problem-solving,
 											I thrive in team environments where innovative ideas and diverse perspectives drive success.
-											My passion lies in leveraging LLM capabilities to enhance effciency, improve decision-making,
+											My passion lies in leveraging LLM capabilities to enhance efficiency, improve decision-making,
 											and create impactful solutions across different industries while maintaining ethical and
 											responsible aspects of intelligent models.</p>
 									</div>
@@ -203,46 +215,13 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 					</div>
 					<div class="row row-pt-md">
 						<div class="col-md-4 text-center animate-box">
-							<div class="services color-6">
-								<span class="icon">
-									<i class="icon-share3"></i>
-								</span>
-								<div class="desc">
-									<h3>Cloud services</h3>
-									<p>Architect cloud infrastructure for application deployment.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-2">
-								<span class="icon">
-									<i class="icon-data"></i>
-								</span>
-								<div class="desc">
-									<h3>Query optimization</h3>
-									<p>Analyze and optimize queries to reduce costs and response time.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
 							<div class="services color-3">
 								<span class="icon">
 									<i class="icon-bulb"></i>
 								</span>
 								<div class="desc">
-									<h3>AI/ML models</h3>
-									<p>Create and maintain responsible ML models with minimal reference time.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-4">
-								<span class="icon">
-									<i class="icon-pen2"></i>
-								</span>
-								<div class="desc">
-									<h3>Algorithm</h3>
-									<p>Algorithm designing and analysis</p>
+									<h3>ML Pipelines</h3>
+									<p>Designing and deploying machine learning pipelines with PyTorch, TensorFlow and Azure Databricks.</p>
 								</div>
 							</div>
 						</div>
@@ -252,8 +231,30 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									<i class="icon-briefcase3"></i>
 								</span>
 								<div class="desc">
-									<h3>Containerization</h3>
-									<p>Writing container files and minimalize container size.</p>
+									<h3>Data Engineering</h3>
+									<p>Extracting, transforming and loading data at scale with SQL, Pandas, Spark and cloud data warehouses.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center animate-box">
+							<div class="services color-2">
+								<span class="icon">
+									<i class="icon-data"></i>
+								</span>
+								<div class="desc">
+									<h3>Cloud Infrastructure</h3>
+									<p>Architecting scalable solutions on AWS, Azure and GCP with Docker containers and Airflow orchestration.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center animate-box">
+							<div class="services color-4">
+								<span class="icon">
+									<i class="icon-pen2"></i>
+								</span>
+								<div class="desc">
+									<h3>Full-Stack Development</h3>
+									<p>Building responsive web applications with React, Vue.js, Node.js and Flask for end-to-end solutions.</p>
 								</div>
 							</div>
 						</div>
@@ -263,8 +264,19 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									<i class="icon-layers2"></i>
 								</span>
 								<div class="desc">
-									<h3>Data Engineering</h3>
-									<p>Pull, clean, visualize, monitor data quality.</p>
+									<h3>AI Chatbot Integration</h3>
+									<p>Deploying intelligent conversational agents using Azure Bot Framework, ChatGPT APIs and LangChain RAG.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center animate-box">
+							<div class="services color-6">
+								<span class="icon">
+									<i class="icon-share3"></i>
+								</span>
+								<div class="desc">
+									<h3>LLM Workflow Development</h3>
+									<p>Building autonomous LLM-powered workflows with LangChain, LangGraph agents and vLLM inference optimization.</p>
 								</div>
 							</div>
 						</div>
@@ -467,9 +479,14 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 				 <p class="tech-stack"><strong>Tech Stack:</strong> MCP, OAuth, Code Indexing</p>
 				  </div>
 				  <div class="projects">
-				 <p class="title">Resume Review Workflow</p>
-				 <p class="subtitle">Implemented resume review workflow to grade application based on set criteria and experiences alignment with job description.</p>
-				 <p class="tech-stack"><strong>Tech Stack:</strong> Python, AI/ML, Resume Analysis</p>
+				   <p class="title">Resume Review Workflow</p>
+				   <p class="subtitle">Implemented resume review workflow to grade application based on set criteria and experiences alignment with job description.</p>
+				   <p class="tech-stack"><strong>Tech Stack:</strong> Python, AI/ML, Resume Analysis</p>
+				  </div>
+				  <div class="projects">
+				   <p class="title">DxEnterprise Bug Fixes & Enhancements</p>
+				   <p class="subtitle">Patched DxEnterprise bugs and implemented enhancement features including centralized logging and command suggestions.</p>
+				   <p class="tech-stack"><strong>Tech Stack:</strong> Python, Bug Fixing, Feature Enhancement</p>
 				  </div>
 				             </div>
 				            </div>
@@ -486,11 +503,11 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 				                <h2><a>Machine Learning Engineer Intern</a> <span>October 2024 - March 2025</span></h2>
 				  <h5>Conative AI, Remote, New York</h5>
 									  <div class="projects">
-										<p class="title">Sale inventory stock prediction (Time series)</p>
-										<p class="subtitle">Create complete and intepretable Deep Learning pipeline (Pytorch Temporal Fusion Transformer) </p>
-										<div class="tech-stack">
-											<strong>Tech Stack:</strong> SQL, Pytorch, AWS Redshift, S3
-										</div>
+									 <p class="title">Sales Inventory Stock Prediction (Time series)</p>
+									 <p class="subtitle">Developed PyTorch-based time-series models for sales inventory prediction, effectively preventing stock-outs.</p>
+									 <div class="tech-stack">
+									  <strong>Tech Stack:</strong> PyTorch, Temporal Fusion Transformer, Time Series
+									 </div>
 									  </div>
 									</div>
 					            </div>
@@ -547,9 +564,16 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 								
 									<div class="projects">
 										<p class="title">Bot Framework - Customized ChatGPT Integration</p>
-										<p class="subtitle">Create and deploy chatbot powered by ChatGPT to handle queries and scenarios from both clients and internal employees</p>
+										<p class="subtitle">Deployed Azure Bot Framework chatbot integrated with ChatGPT, LangChain, and ChromaDB supporting natural language and SQL queries.</p>
 										<div class="tech-stack">
-											<strong>Tech Stack:</strong> Azure Botframework, ChatGPT API, Langchain, Vector Database ChromaDB
+											<strong>Tech Stack:</strong> Azure Bot Framework, ChatGPT API, LangChain, ChromaDB
+										</div>
+									</div>
+									<div class="projects">
+										<p class="title">Streamlit Dashboard</p>
+										<p class="subtitle">Developed Streamlit dashboard to visualize database query results and model predictions for stakeholders.</p>
+										<div class="tech-stack">
+											<strong>Tech Stack:</strong> Streamlit, Python, Data Visualization
 										</div>
 									</div>
 					               </div>
@@ -563,14 +587,12 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 					               </div>
 					               <div class="timeline-label">
 					               	<h2><a>Engineering Research Assistant</a> <span>April 2021 - July 2022</span></h2>
-									<h5>Katalon Inc, Ho Chi Minh, Vietnam</h5>
-									<em>Research on test cases generation and automate testing using <a href="https://katalon.com/">Katalon</a> app:</em>
-									<ul>
-										<li>Develop state-of-the-art graph representation of AUT from existing human test cases.</li>
-										<li>Generate and optimize test sets to save time while retaining fault coverage.</li>
-										<li>Visualize interactive graph to analyze results.</li>
-										<li>Automate exploration and find new faults.</li>
-									</ul>
+					    <h5>Katalon, Ho Chi Minh, Vietnam</h5>
+					    <ul>
+					     <li>Developed graph-based representation of Application Under Test (AUT) to automate test case generation and optimization.</li>
+					     <li>Reduced test execution time by 30% while maintaining fault coverage through optimized test set generation.</li>
+					     <li>Created interactive GUI for visualizing test results, exposing potential security threats and faults.</li>
+					    </ul>
 					               </div>
 					            </div>
 					         </article>
@@ -795,8 +817,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 								</div>
 								<div class="colorlib-text">
 									<p>
-										<a href="mailto:lvthanh1822@gmail.com">lvthanh1822@gmail.com</a><br>
-										<a href="mailto:tleviet@pdx.edu">tleviet@pdx.edu</a>
+										<a href="mailto:lvthanh1822@gmail.com">lvthanh1822@gmail.com</a>
 									</p>
 								</div>
 							</div>

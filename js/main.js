@@ -314,6 +314,37 @@
 		})
 	};
 
+	// Theme Toggle Logic
+	var themeToggle = function() {
+	    // Check for saved theme preference, or use system preference
+	    var savedTheme = localStorage.getItem('theme');
+	    var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	    
+	    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+	        document.documentElement.setAttribute('data-theme', 'dark');
+	    } else {
+	        document.documentElement.setAttribute('data-theme', 'light');
+	    }
+	    
+	    // Toggle button click handler
+	    $('#theme-toggle').on('click', function(e) {
+	        e.preventDefault();
+	        var currentTheme = document.documentElement.getAttribute('data-theme');
+	        var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+	        
+	        document.documentElement.setAttribute('data-theme', newTheme);
+	        localStorage.setItem('theme', newTheme);
+	    });
+	    
+	    // Listen for system theme changes
+	    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+	        if (!localStorage.getItem('theme')) {
+	            var newTheme = e.matches ? 'dark' : 'light';
+	            document.documentElement.setAttribute('data-theme', newTheme);
+	        }
+	    });
+	};
+
 	// Document on load.
 	$(function(){
 		fullHeight();
@@ -332,6 +363,7 @@
 		sliderMain();
 		stickyFunction();
 		owlCrouselFeatureSlide();
+		themeToggle();
 	});
 
 
